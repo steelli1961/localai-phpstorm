@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+    <id>com.ollama.plugin</id>
+    <name>Ollama Chat Plugin</name>
+    <vendor email="support@ollama.local" url="https://ollama.ai">Ollama Local</vendor>
+    
+    <description><![CDATA[
+        A PhpStorm plugin for integrating Ollama AI models.
+        
+        Features:
+        - Connect to local Ollama instance
+        - Configure host and port
+        - Auto-detect available models
+        - Interactive chat interface
+        - View metrics (memory, CPU, tokens/sec)
+        - Execute prompts and get AI responses
+        
+        Requires PhpStorm 2025.3+
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <b>1.0.0</b>
+        <ul>
+        <li>Initial release with Ollama integration</li>
+        <li>Settings configuration</li>
+        <li>Tool window with chat interface</li>
+        <li>Metrics display</li>
+        </ul>
+    ]]></change-notes>
+
+    <idea-version since-build="251.0"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable 
+            parentId="tools" 
+            instance="com.ollama.plugin.settings.OllamaSettingsConfigurable" 
+            id="com.ollama.plugin.settings"
+            displayName="Ollama Configuration"/>
+        
+        <applicationService 
+            serviceImplementation="com.ollama.plugin.settings.OllamaSettingsService"/>
+        
+        <applicationService 
+            serviceImplementation="com.ollama.plugin.client.OllamaClient"/>
+        
+        <toolWindow 
+            id="Ollama Chat" 
+            anchor="right" 
+            icon="AllIcons.Nodes.Plugin"
+            factoryClass="com.ollama.plugin.ui.OllamaChatToolWindowFactory"/>
+    </extensions>
+
+    <actions>
+    </actions>
+</idea-plugin>

@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '1.2.1'
+}
+
+group = 'com.ollama'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://www.jetbrains.com/intellij-repository/releases' }
+}
+
+dependencies {
+    // JSON processing
+    implementation 'com.google.code.gson:gson:2.10.1'
+    
+    // HTTP client
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+}
+
+intellij {
+    version = '2025.1'
+    updateSinceUntilBuild = false
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+tasks.buildPlugin {
+    archiveBaseName = 'ollama-plugin'
+    archiveVersion = '1.0.0'
+}

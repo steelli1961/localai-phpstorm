@@ -1,0 +1,28 @@
+# Gradle
+.gradle
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+*.class
+*.log
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Build
+out/
+*.jar
+dist/
+
+# Node (if using yarn)
+node_modules/
