@@ -51,8 +51,27 @@
             anchor="right" 
             icon="AllIcons.Nodes.Plugin"
             factoryClass="com.ollama.plugin.ui.OllamaChatToolWindowFactory"/>
+
+        <applicationService 
+            serviceImplementation="com.ollama.plugin.service.CodeAnalysisService"/>
     </extensions>
 
     <actions>
+        <action id="com.ollama.RefactorCode" class="com.ollama.plugin.action.RefactorCodeAction"
+                text="Refactor Code with Ollama" description="Refactor selected code using Ollama">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift R"/>
+        </action>
+        <action id="com.ollama.ExplainCode" class="com.ollama.plugin.action.ExplainCodeAction"
+                text="Explain Code" description="Get explanation for selected code">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift E"/>
+        </action>
+        <action id="com.ollama.OptimizeCode" class="com.ollama.plugin.action.OptimizeCodeAction"
+                text="Optimize Code" description="Optimize selected code">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift O"/>
+        </action>
+        <action id="com.ollama.GenerateTests" class="com.ollama.plugin.action.GenerateTestsAction"
+                text="Generate Tests" description="Generate unit tests for selected code">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift T"/>
+        </action>
     </actions>
 </idea-plugin>
