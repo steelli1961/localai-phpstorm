@@ -2,7 +2,7 @@
 <idea-plugin>
     <id>com.ollama.plugin</id>
     <name>Ollama Chat Plugin</name>
-    <vendor email="support@ollama.local" url="https://ollama.ai">Ollama Local</vendor>
+    <vendor email="steelli1961@gmail.com" url="https://github.com/steelli1961/localai-phpstorm">steelli1961</vendor>
     
     <description><![CDATA[
         A PhpStorm plugin for integrating Ollama AI models.

@@ -2,6 +2,9 @@
 
 A powerful PhpStorm plugin for integrating Ollama AI models directly into your IDE.
 
+**Author**: steelli1961@gmail.com  
+**Repository**: https://github.com/steelli1961/localai-phpstorm
+
 ## Features
 
 - **Local Ollama Connection**: Connect to your local Ollama instance with custom host and port configuration
